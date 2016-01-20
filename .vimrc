@@ -130,10 +130,6 @@ NeoBundleCheck
 " NeoBundle Setting End
 "-----------------------
 
-
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 "set nocompatible	" Use Vim defaults instead of 100% vi compatibility
@@ -156,7 +152,5 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs-2,cp932,sjis "自動判別に使�
 set clipboard=unnamed,autoselect " クリップボード連携
 highlight VertSplit cterm=NONE ctermfg=234 ctermbg=234 " 分割線の色
 
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup nobackup
+"nnoremap <C-l> :tabnext<CR>
+"nnoremap <C-h> :tabprevious<CR>
