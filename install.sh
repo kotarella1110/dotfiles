@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GITHUB_URL="https://github.com/kotarella1110/dotfiles.git"
-DOTPATH=~/.dotfiles
+DOTPATH=~/dotfiles
 
 # git が使えるなら git
 if type "git"; then
