@@ -1,5 +1,5 @@
 "------------------------
-" NeoBundle Setting Start 
+" NeoBundle Setting Start
 "-------------------------
 if has('vim_starting')
 
@@ -27,7 +27,7 @@ call neobundle#begin(expand('~/.vim/bundle/')) " Start
 
 " 必須
     NeoBundleFetch 'Shougo/neobundle.vim'
-  
+
     " インストールするBundles
     NeoBundle 'tomasr/molokai'
     NeoBundle 'sickill/vim-monokai'
@@ -57,8 +57,11 @@ syntax on               " 構文に色をつける
 " インストール済のBundlesの設定
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
-" デフォルトでツリーを表示させる
-autocmd VimEnter * execute 'NERDTree'
+" ファイルが指定された場合はNERDTreeを非表示にし、指定なしの場合は表示する設定
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" NERDTreeを表示するコマンドを設定
+map <C-n> :NERDTreeToggle<CR>
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_start_level=2
@@ -120,6 +123,7 @@ function! s:syntastic()
     call lightline#update()
 endfunction
 
+
 " 必須
 filetype plugin indent on
 
@@ -132,10 +136,10 @@ NeoBundleCheck
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
-"set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+"set nocompatible" Use Vim defaults instead of 100% vi compatibility
 language C              " 各種メッセージを英語にする
 
-set backspace=2		" more powerful backspacing
+set backspace=2         " more powerful backspacing
 set number              " 行番号の表示
 set cursorline          " カレント行のハイライト
 set showmatch           " 対応する括弧の強調表示
@@ -148,8 +152,10 @@ set shiftwidth=4        " 自動インデントでずれるスペース数
 set laststatus=2        " ステータス行を常に表示
 set encoding=utf-8      " utf-8にエンコード
 set fileencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs-2,cp932,sjis "自動判別に使用する文字コード 
+set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs-2,cp932,sjis "自動判別に使用する文字コード
 set clipboard=unnamed,autoselect " クリップボード連携
+"set list
+"set listchars=tab:••,trail:-,eol:┘,extends:»,precedes:«,nbsp:%
 highlight VertSplit cterm=NONE ctermfg=234 ctermbg=234 " 分割線の色
 
 "nnoremap <C-l> :tabnext<CR>

@@ -3,6 +3,7 @@
 
 # MacPorts Installer addition on 2015-07-23_at_21:07:53: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export MANPATH="/opt/local/man:$MANPATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # /opt/local/etc/profile.d/bash_completion.shを読み込む
