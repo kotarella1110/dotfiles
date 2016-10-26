@@ -5,6 +5,10 @@
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export MANPATH="/opt/local/man:$MANPATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+# coreutils
+eval "$(gdircolors ~/.dir_colors)"
+export PATH="/opt/local/libexec/gnubin/:$PATH"
 
 # /opt/local/etc/profile.d/bash_completion.shを読み込む
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then

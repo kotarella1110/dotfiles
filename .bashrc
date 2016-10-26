@@ -4,7 +4,11 @@
 # シェル関数を定義する
 # コマンドライン補完の設定をする
 
-alias ls="ls -G"
+# docker
+#PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
+
+#alias ls="ls -G"
+alias ls='gls -p --color=auto'
 
 # macports
 alias vim="/opt/local/bin/vim"
@@ -70,3 +74,10 @@ function tmux_automatically_attach_session()
     fi
 }
 tmux_automatically_attach_session
+
+# git
+git_branch() {
+  echo $(git branch --no-color 2>/dev/null | sed -ne "s/^\* \(.*\)$/\1/p")
+}
+#PS1='----\n\[\033[36m\]\u@\h\[\033[0m\]\[\033[32m\]\w\[\033[0m\]:\[\033[35m\]$(git_branch)\[\033[0m\] $ '
+PS1='\[\033[36m\]\u@\h\[\033[0m\]\[\033[32m\]\w\[\033[0m\]:\[\033[35m\]$(git_branch)\[\033[0m\] $ '

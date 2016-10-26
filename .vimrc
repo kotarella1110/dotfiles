@@ -49,9 +49,9 @@ call neobundle#begin(expand('~/.vim/bundle/')) " Start
 call neobundle#end() " End
 
 "colorscheme molokai     " カラースキーマ選択
-colorscheme monokai     " カラースキーマ選択
-"colorscheme solarized   " カラースキーマ選択
-"set background=dark
+"colorscheme monokai     " カラースキーマ選択
+colorscheme solarized   " カラースキーマ選択
+set background=dark
 syntax on               " 構文に色をつける
 
 " インストール済のBundlesの設定
@@ -68,9 +68,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 自動カラーを無効にして手動で設定する
 let g:indent_guides_auto_colors=0
 " 奇数インデントのガイドカラー
-hi IndentGuidesOdd  ctermbg=236
+"hi IndentGuidesOdd  ctermbg=236
 " 偶数インデントのガイドカラー
-hi IndentGuidesEven ctermbg=237
+"hi IndentGuidesEven ctermbg=237
 "let g:indent_guides_color_change_percent = 30
 " ガイド幅をインデント幅に合わせる
 let g:indent_guides_guide_size = &tabstop
