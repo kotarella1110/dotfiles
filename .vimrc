@@ -29,8 +29,6 @@ call neobundle#begin(expand('~/.vim/bundle/')) " Start
     NeoBundleFetch 'Shougo/neobundle.vim'
 
     " インストールするBundles
-    NeoBundle 'tomasr/molokai'
-    NeoBundle 'sickill/vim-monokai'
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'scrooloose/nerdtree'
     " インデントに色を付けて見やすくする
@@ -48,8 +46,6 @@ call neobundle#begin(expand('~/.vim/bundle/')) " Start
 
 call neobundle#end() " End
 
-"colorscheme molokai     " カラースキーマ選択
-"colorscheme monokai     " カラースキーマ選択
 colorscheme solarized   " カラースキーマ選択
 set background=dark
 syntax on               " 構文に色をつける
@@ -147,13 +143,14 @@ set hlsearch            " 検索文字列のハイライト
 set ignorecase          " 大文字と小文字を区別しない
 set expandtab           " タブ入力を複数の空白入力に置き換え
 set autoindent          " オートインデント
-set tabstop=4           " タブが占めるスペース数
-set shiftwidth=4        " 自動インデントでずれるスペース数
+set tabstop=2           " タブが占めるスペース数
+set shiftwidth=2        " 自動インデントでずれるスペース数
 set laststatus=2        " ステータス行を常に表示
 set encoding=utf-8      " utf-8にエンコード
 set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,ucs-2,cp932,sjis "自動判別に使用する文字コード
 set clipboard=unnamed,autoselect " クリップボード連携
+set shell=/bin/bash\ -l\ -O\ expand_aliases
 "set list
 "set listchars=tab:••,trail:-,eol:┘,extends:»,precedes:«,nbsp:%
 highlight VertSplit cterm=NONE ctermfg=234 ctermbg=234 " 分割線の色

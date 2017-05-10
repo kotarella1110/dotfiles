@@ -10,10 +10,6 @@
 #alias ls="ls -G"
 alias ls='gls -p --color=auto'
 
-# macports
-alias vim="/opt/local/bin/vim"
-alias reattach-to-user-namespace="/opt/local/bin/reattach-to-user-namespace"
-
 # tmux
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }

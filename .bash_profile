@@ -1,19 +1,18 @@
 # ログイン時にのみ実行
 # 環境変数を設定する (export する変数)
 
-# MacPorts Installer addition on 2015-07-23_at_21:07:53: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export MANPATH="/opt/local/man:$MANPATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 # coreutils
-eval "$(gdircolors ~/.dir_colors)"
-export PATH="/opt/local/libexec/gnubin/:$PATH"
-
-# /opt/local/etc/profile.d/bash_completion.shを読み込む
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
-fi
+eval "$(gdircolors ~/.dircolors)"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+# java
+export JAVA_HOME=$(/usr/libexec/java_home)
+# android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+# bash_completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # ~/.bashrcを読み込む
 if [ -f ~/.bashrc ]; then
