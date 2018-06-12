@@ -155,5 +155,6 @@ set shell=/bin/bash\ -l\ -O\ expand_aliases
 "set listchars=tab:••,trail:-,eol:┘,extends:»,precedes:«,nbsp:%
 highlight VertSplit cterm=NONE ctermfg=234 ctermbg=234 " 分割線の色
 
-"nnoremap <C-l> :tabnext<CR>
-"nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprevious<CR>
+inoremap <silent> jj <ESC>
