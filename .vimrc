@@ -1,50 +1,37 @@
 "------------------------
-" NeoBundle Setting Start
+" vim-plug Setting Start
 "-------------------------
 if has('vim_starting')
-
-    if &compatible
-        set nocompatible               " Be iMproved
-    endif
-
-    " NeoBundleをインストールしていない場合は、
-    " 自動インストールする
-    if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-         echo "install neobundle..."
-        " neobundle.vimのclone
-        :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-    endif
-
-    " 必須
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-
+  set rtp+=~/.vim/plugged/vim-plug
+  " vim-plug をインストールしていない場合は、
+  " 自動インストールする
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
 endif
 
 " 必須
-call neobundle#begin(expand('~/.vim/bundle/')) " Start
-
-    let g:neobundle_default_git_protocol='https'
-
-" 必須
-    NeoBundleFetch 'Shougo/neobundle.vim'
-
-    " インストールするBundles
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'scrooloose/nerdtree'
-    " インデントに色を付けて見やすくする
-    NeoBundle 'nathanaelkane/vim-indent-guides'
-    " コメントON/OFFを手軽に実行
-    NeoBundle 'tomtom/tcomment_vim'
-    " ステータスラインの表示内容を強化
-    NeoBundle 'itchyny/lightline.vim'
-    " スニッペト
-    NeoBundle 'Shougo/neocomplete'
-    NeoBundle 'Shougo/neosnippet'
-    NeoBundle 'Shougo/neosnippet-snippets'
-    " ファイルの構文エラーをチェック 
-    NeoBundle 'scrooloose/syntastic'
-
-call neobundle#end() " End
+call plug#begin('~/.vim/plugged') " Start
+  Plug 'junegunn/vim-plug',
+       \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+  " インストールするBundles
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'scrooloose/nerdtree'
+  " インデントに色を付けて見やすくする
+  Plug 'nathanaelkane/vim-indent-guides'
+  " コメントON/OFFを手軽に実行
+  Plug 'tomtom/tcomment_vim'
+  " ステータスラインの表示内容を強化
+  Plug 'itchyny/lightline.vim'
+  " スニッペト
+  Plug 'Shougo/neocomplete'
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+  " ファイルの構文エラーをチェック 
+  Plug 'scrooloose/syntastic'
+call plug#end() " End
 
 colorscheme solarized   " カラースキーマ選択
 set background=dark
@@ -123,12 +110,11 @@ endfunction
 " 必須
 filetype plugin indent on
 
-" 起動時に見つかったインストールしていないBundleがある場合は、
-" インストールするように求められる
-NeoBundleCheck
-"-----------------------
-" NeoBundle Setting End
-"-----------------------
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
