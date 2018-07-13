@@ -18,17 +18,20 @@ brew "composer"
 brew "coreutils"
 brew "docker", link: false
 brew "fzf"
+brew "ghq"
 brew "git"
 brew "git-secrets"
 brew "go"
 brew "gradle"
 brew "graphviz"
+brew "hub"
 brew "imagemagick"
 brew "jmeter"
 brew "mas"
 brew "nkf"
 brew "nvm"
 brew "openssl@1.1"
+brew "peco"
 brew "php@7.1"
 brew "pipenv"
 brew "plantuml"
@@ -56,8 +59,12 @@ cask "docker"
 cask "dropbox"
 cask "evernote"
 cask "filezilla"
+cask "font-ricty-diminished"
 cask "google-chrome"
+cask "google-chrome-canary"
 cask "hipchat"
+cask "java8"
+cask "karabiner-elements"
 cask "lastpass"
 cask "mono-mdk"
 cask "mysqlworkbench"
@@ -66,6 +73,7 @@ cask "oni"
 cask "phpstorm"
 cask "postman"
 cask "robomongo"
+cask "safari-technology-preview"
 cask "sequel-pro"
 cask "shiftit"
 cask "sketch"
@@ -81,10 +89,6 @@ cask "virtualbox"
 cask "visual-studio"
 cask "visual-studio-code"
 cask "wireshark"
-cask "homebrew/cask-fonts/font-ricty-diminished"
-cask "homebrew/cask-versions/google-chrome-canary"
-cask "homebrew/cask-versions/java8"
-cask "homebrew/cask-versions/safari-technology-preview"
 mas "App Icon Resizer", id: 1013592989
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
@@ -92,6 +96,7 @@ mas "Keynote", id: 409183694
 mas "Kobito", id: 896624060
 mas "LastPass", id: 926036361
 mas "Lungo", id: 1263070803
+mas "macOS High Sierra", id: Install
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
