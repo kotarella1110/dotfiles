@@ -20,6 +20,7 @@ brew "docker", link: false
 brew "fzf"
 brew "ghq"
 brew "git"
+brew "git-flow"
 brew "git-secrets"
 brew "go"
 brew "gradle"
@@ -96,7 +97,6 @@ mas "Keynote", id: 409183694
 mas "Kobito", id: 896624060
 mas "LastPass", id: 926036361
 mas "Lungo", id: 1263070803
-mas "macOS High Sierra", id: Install
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
