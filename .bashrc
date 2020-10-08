@@ -7,8 +7,12 @@
 # docker
 #PS1='[\u@\h \W$(__docker_machine_ps1)]\$ '
 
+# starship
+eval "$(starship init bash)"
+
 #alias ls="ls -G"
 alias ls='gls -p --color=auto'
+
 
 # tmux
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
@@ -71,12 +75,11 @@ function tmux_automatically_attach_session()
 }
 tmux_automatically_attach_session
 
-# git
-git_branch() {
-  echo $(git branch --no-color 2>/dev/null | sed -ne "s/^\* \(.*\)$/\1/p")
-}
-#PS1='----\n\[\033[36m\]\u@\h\[\033[0m\]\[\033[32m\]\w\[\033[0m\]:\[\033[35m\]$(git_branch)\[\033[0m\] $ '
-PS1='\[\033[36m\]\u@\h\[\033[0m\]\[\033[32m\]\w\[\033[0m\]:\[\033[35m\]$(git_branch)\[\033[0m\] $ '
+# Gitブランチ名を表示
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+#source ~/.git-prompt.sh
+# プロンプトで表示する内容
+#PS1='\[\e[0;34m\]\w\[\e[0;36m\]$(__git_ps1) \[\e[37m\]\$ '
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -84,3 +87,7 @@ PS1='\[\033[36m\]\u@\h\[\033[0m\]\[\033[32m\]\w\[\033[0m\]:\[\033[35m\]$(git_bra
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/kosugawara/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/kosugawara/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/kosugawara/Development/js/mell-fam/node_modules/tabtab/.completions/slss.bash ] && . /Users/kosugawara/Development/js/mell-fam/node_modules/tabtab/.completions/slss.bash

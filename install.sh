@@ -40,3 +40,5 @@ do
 
     ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
+
+ln -snfv "$DOTPATH/Brewfile" "$HOME/.Brewfile"
