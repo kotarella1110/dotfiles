@@ -91,3 +91,7 @@ tmux_automatically_attach_session
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /Users/kosugawara/Development/js/mell-fam/node_modules/tabtab/.completions/slss.bash ] && . /Users/kosugawara/Development/js/mell-fam/node_modules/tabtab/.completions/slss.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

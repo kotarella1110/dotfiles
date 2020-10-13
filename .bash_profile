@@ -6,7 +6,8 @@ eval "$(gdircolors ~/.dircolors)"
 export LANG=ja_JP.UTF-8
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -32,9 +33,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$HOME/.fastlane/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-# xcode
-#export DEVELOPER_DIR="/Applications/Xcode 10.1.app"
-export DEVELOPER_DIR="/Applications/Xcode.app"
 # bash_completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
